@@ -1,0 +1,49 @@
+# Configuration for DoS Attack Detection System
+
+data:
+  # Path to CICIDS2017 dataset (if available)
+  cicids_path: "data/CICIDS2017.csv"
+  # Use simulated data if real dataset not available
+  use_simulated: true
+  simulated_samples: 10000
+  test_size: 0.2
+  random_state: 42
+  use_smote: true
+
+models:
+  # Model configurations
+  random_forest:
+    n_estimators: 100
+    max_depth: 10
+    random_state: 42
+
+  svm:
+    kernel: 'rbf'
+    C: 1.0
+    gamma: 'scale'
+
+  isolation_forest:
+    n_estimators: 100
+    contamination: 0.1
+    random_state: 42
+
+  autoencoder:
+    encoding_dim: 64
+    epochs: 50
+    batch_size: 32
+
+detection:
+  # Detection thresholds
+  anomaly_threshold: 0.5
+  dos_threshold: 0.7
+
+dashboard:
+  # Dashboard settings
+  host: "localhost"
+  port: 5000
+  debug: true
+  refresh_interval: 30  # seconds
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
