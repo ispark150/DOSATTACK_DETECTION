@@ -1,3 +1,4 @@
+🛡️ DoS Attack Detection System
 A comprehensive Denial-of-Service (DoS) attack detection system built with Python and scikit-learn, featuring real-time monitoring, multiple detection algorithms, and an interactive web dashboard.
 
 🚀 Features
